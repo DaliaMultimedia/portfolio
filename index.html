@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dalia Pastene — Web & Front-end</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+ <!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+
+    <!-- Mobile: Hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Nombre -->
+   <a href="#" class="nav-name">Dalia Pastene</a>
+
+    <!-- Desktop: Links -->
+    <nav class="nav-links">
+      <a href="#about">Sobre mí</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#process">Proceso</a>
+      <a href="#services">Servicios</a>
+      <a href="#contact">Contacto</a>
+       <a href="#faq" class="nav-faq">FAQ</a>
+    </nav>
+
+    <!-- CTA -->
+    <a
+      href="https://forms.gle/udBH1JxCYpKD5dtAA"
+      target="_blank"
+      class="nav-cta">
+      Iniciar proyecto
+    </a>
+
+  </div>
+</header>
+
+<!-- SIDE MENU — Mobile -->
+<aside class="side-menu" id="sideMenu">
+  <nav>
+
+    <a href="#about">Sobre mí</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#process">Proceso</a>
+    <a href="#services">Servicios</a>
+    <a href="#contact">Contacto</a>
+
+    <a
+      href="https://forms.gle/udBH1JxCYpKD5dtAA"
+      target="_blank"
+      class="menu-cta">
+      Iniciar proyecto
+    </a>
+
+  </nav>
+</aside>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>
+        Diseño web
+        <span>y desarrollo front-end</span>
+      </h1>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section class="about reveal" id="about">
+<div class="about-media">
+    <img
+      src="img/dalia.jpg"
+      alt="Dalia Pastene — code artist"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="about-content">
+      <h2>Sobre mí</h2>
+
+      <p class="about-text lead">
+        Programo con sensibilidad visual.
+        Uso el código como materia prima para crear
+        experiencias que se sienten vivas.
+      </p>
+
+      <p class="about-text">
+        Trabajo en el cruce entre diseño, arte y tecnología.
+        Me interesa el detalle, el ritmo y la narrativa que
+        emerge cuando una interfaz respira.
+      </p>
+
+      <p class="about-text">
+        Cada proyecto es una pieza única: no busco
+        reproducir fórmulas, sino construir identidad
+        a través del movimiento, la tipografía y el código.
+      </p>
+
+      <p class="manifesto reveal">
+        Escribo código como quien compone una obra.
+      </p>
+
+      <canvas class="about-canvas" aria-hidden="true"></canvas>
+ </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="section-divider"></div>
+
+    <!-- PROYECTOS -->
+    <section class="projects" id="projects">
+
+      <h2 class="projects-title">Proyectos</h2>
+
+     <!-- Gempre -->
+<article class="project project-commercial reveal">
+
+  <span class="project-tag">Comercial</span>
+
+  <h3 class="project-title">Gempre</h3>
+
+  <div class="project-media">
+    <img
+      src="img/Instagram post - 1.png"
+      alt="Vista previa del sitio web Gempre"
+      loading="lazy"
+    >
+  </div>
+
+  <p class="project-description">
+    Sitio web comercial enfocado en claridad,
+    conversión y una identidad visual sobria.
+  </p>
+
+ <a
+  href="#modal-gempre"
+  class="project-link"
+  data-modal="modal-gempre"
+>
+  Ver proyecto
+</a>
+
+
+</article>
+
+
+      <!-- Amuri -->
+      <article class="project project-art reveal">
+
+        <span class="project-tag">Code Art</span>
+
+        <h3 class="project-title">Amuri</h3>
+
+        <div class="project-media">
+          <img
+            src="img/Instagram post - 2.png"
+            alt="Vista previa de la galería digital Amuri"
+            loading="lazy"
+          >
+        </div>
+
+        <p class="project-description">
+          Galería digital donde exploro el código
+          como medio artístico, generativo y sensible.
+        </p>
+
+        <a href="#" class="project-link">
+          Explorar galería
+        </a>
+
+      </article>
+
+    </section>
+
+    <!-- DIVISOR ENTRE PROYECTOS Y PROCESO -->
+    <div class="section-divider projects-divider"></div>
+
+    <!-- PROCESO -->
+    <section class="process" id="process">
+
+      <h2 class="process-title">Proceso</h2>
+
+      <ol class="process-steps">
+
+        <li class="process-step reveal">
+          <span class="step-number">01</span>
+          <h3>Brief & Benchmark</h3>
+          <p>
+            Escucho, pregunto y analizo.
+            Definimos objetivos, público y referencias
+            para encontrar la mejor forma de construir tu web.
+          </p>
+        </li>
+
+        <li class="process-step reveal">
+          <span class="step-number">02</span>
+          <h3>Diseño Mobile First</h3>
+          <p>
+            Diseño primero para pantallas pequeñas.
+            Priorizo claridad, ritmo y experiencia
+            antes de escalar a desktop.
+          </p>
+        </li>
+
+        <li class="process-step reveal">
+          <span class="step-number">03</span>
+          <h3>Desarrollo & Detalle</h3>
+          <p>
+            Llevo el diseño al código.
+            Ajusto microinteracciones, animaciones
+            y performance para una experiencia fluida.
+          </p>
+        </li>
+
+        <li class="process-step reveal">
+          <span class="step-number">04</span>
+          <h3>Lanzamiento & Ajustes</h3>
+          <p>
+            Publicamos, probamos y refinamos.
+            Acompaño los ajustes finales según
+            el uso real del sitio.
+          </p>
+        </li>
+
+      </ol>
+
+      <!-- DIVISOR -->
+<div class="section-divider"></div>
+
+<section class="services" id="services">
+
+  <h2 class="services-title">Servicios</h2>
+
+  <ul class="services-list">
+
+    <li class="service-item reveal">
+      <h3>Investigación & Estrategia</h3>
+      <p>
+        Analizo tu mercado, referentes y oportunidades.
+        Busco el mejor camino para que tu web tenga
+        sentido, identidad y dirección.
+      </p>
+    </li>
+
+    <li class="service-item reveal">
+      <h3>Diseño Web</h3>
+      <p>
+        Diseño experiencias claras, sensibles y coherentes.
+        Cada decisión visual responde a un objetivo
+        y a una narrativa.
+      </p>
+    </li>
+
+    <li class="service-item reveal">
+      <h3>Desarrollo Front-end</h3>
+      <p>
+        Transformo el diseño en código limpio y optimizado.
+        Animaciones, microinteracciones y performance
+        pensadas mobile-first.
+      </p>
+    </li>
+
+    <li class="service-item reveal">
+      <h3>Publicación & Dominio</h3>
+      <p>
+        Configuro hosting y dominio.
+        Tu sitio queda online, estable
+        y listo para crecer.
+      </p>
+    </li>
+
+    <li class="service-item reveal">
+      <h3>Mantenimiento Mensual</h3>
+      <p>
+        Me ocupo de que tu web siga funcionando.
+        Actualizaciones, ajustes y soporte
+        para que nunca quede obsoleta.
+      </p>
+    </li>
+
+    <li class="service-item reveal">
+      <h3>Servicios Complementarios</h3>
+      <p>
+        Diseño gráfico para marketing digital,
+        posicionamiento SEO
+        y desarrollo de agentes de IA
+        para automatizar procesos.
+      </p>
+    </li>
+
+  </ul>
+<!-- DIVISOR -->
+<div class="section-divider"></div>
+
+
+</section>
+
+</section>
+
+    </section>
+<section class="faq" id="faq">
+  <p class="faq-eyebrow">FAQ</p>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Cuánto tiempo tarda una web?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Depende del proyecto, pero una web mobile-first bien pensada
+          suele tomar entre 2 y 5 semanas. Prefiero avanzar con criterio
+          antes que apurar resultados.
+        </p>
+      </div>
+    </div>
+<div class="faq-item">
+      <button class="faq-question">
+        ¿Es muy caro hacer una web?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Depende del tipo de web que necesites, aproximadamente una web esencial tiene un costo de USD 150 (convertible a moneda local).
+        
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Trabajo con plantillas?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          No. Cada web nace desde cero, a partir del brief, la investigación
+          y el propósito del proyecto. El diseño acompaña al mensaje,
+          no al revés.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Puedo pedir cambios?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Sí. El proceso es colaborativo. Hay instancias claras de feedback
+          para ajustar diseño y código sin perder el rumbo.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Qué pasa después de publicar la web?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Puedo encargarme del mantenimiento, actualizaciones y mejoras.
+          La web no se abandona: evoluciona.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="contact" id="contact">
+
+  <p class="contact-eyebrow">Contacto</p>
+
+  <h2 class="contact-title">
+    ¿Trabajamos juntos?
+  </h2>
+
+  <p class="contact-text">
+    Si sentís que mi forma de trabajar encaja con tu proyecto,
+    podés escribirme o seguir mi trabajo en estos espacios:
+  </p>
+
+  <ul class="contact-list">
+
+    <li>
+      <span class="contact-label">Email</span>
+      <a href="mailto:pastenedaliam@gmail.com">
+       pastenedaliam@gmail.com
+      </a>
+    </li>
+
+    <li>
+      <span class="contact-label">Instagram</span>
+      <a href="https://www.instagram.com/dalia.multimedia/" target="_blank">
+       www.instagram.com/dalia.multimedia/
+      </a>
+    </li>
+
+    <li>
+      <span class="contact-label">Behance</span>
+      <a href="https://www.behance.net/daliamultimedia" target="_blank">
+      www.behance.net/daliamultimedia
+      </a>
+    </li>
+
+    <li>
+      <span class="contact-label">LinkedIn</span>
+      <a href="https://www.linkedin.com/in/dalpast/" target="_blank">
+       www.linkedin.com/in/dalpast
+      </a>
+    </li>
+
+    <li>
+      <span class="contact-label">itch.io</span>
+      <a href="https://dalia-multimedia.itch.io" target="_blank">
+      dalia-multimedia.itch.io
+      </a>
+    </li>
+    <li>
+      <span class="contact-label">Galería digital</span>
+      <a href="https://TU_USUARIO.itch.io" target="_blank">
+        Amuri
+      </a>
+    </li>
+
+  </ul>
+
+</section>
+
+
+
+  </main>
+
+<footer class="site-footer">
+  <p>© 2026 · Desarrollado por<span>Dalia multimedia</span></p>
+</footer>
+
+  <script src="main.js"></script>
+ <a
+  href="https://wa.me/5491168003771"
+  target="_blank"
+  class="whatsapp-float"
+  aria-label="Escribirme por WhatsApp"
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20.5 11.9a8.6 8.6 0 01-12.7 7.5L3 21l1.7-4.7A8.6 8.6 0 1120.5 11.9z"/>
+    <path d="M16.3 13.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.7.8-.9 1c-.2.2-.3.2-.6.1a6.9 6.9 0 01-2-1.3 7.5 7.5 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 .3.4.4.6a11.3 11.3 0 004.2 3.8c1.6.7 1.6.5 1.9.5s1.1-.5 1.3-1 .2-.9.2-1-.2-.2-.4-.3z"/>
+  </svg>
+</a>
+
+<button
+  class="back-to-top"
+  id="backToTop"
+  aria-label="Volver arriba">
+  volver arriba
+</button>
+<!-- MODAL GEMPRE -->
+<div class="modal" id="modal-gempre" aria-hidden="true">
+
+  <div class="modal-overlay" data-close></div>
+
+  <div class="modal-content" role="dialog" aria-modal="true">
+
+    <button class="modal-close" data-close aria-label="Cerrar">
+      ✕
+    </button>
+
+    <span class="modal-tag">Proyecto comercial</span>
+
+    <h3 class="modal-title">Gempre</h3>
+
+    <div class="modal-media">
+      <div class="modal-video">
+  <video
+    src="video/Video Project 4.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+  ></video>
+</div>
+
+
+    <p class="modal-text">
+      Diseño y desarrollo de sitio web comercial con foco en
+      la visual y la claridad de contenido.
+    </p>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
