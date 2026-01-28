@@ -260,6 +260,7 @@ body {
 
 #p5-hero canvas {
   position: absolute;
+pointer-events: none;
   top: 0;
   left: 0;
 }
@@ -1326,5 +1327,6 @@ filter: saturate(.9) contrast(1.05);
     border-radius: 0;
   }
 }
+
 
 
