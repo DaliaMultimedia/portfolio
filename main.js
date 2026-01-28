@@ -209,7 +209,7 @@ function draw() {
 }
 
 function mouseMoved() {
-  if (windowWidth < 768) return
+  if (mouseY < 0 || mouseY > height) return
   active = true
   loop()
   redraw()
@@ -268,5 +268,6 @@ class BezierLine {
     )
   }
 }
+
 
 
