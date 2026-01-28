@@ -272,8 +272,13 @@ pointer-events: none;
 }
 
 .hero-title-mobile {
-  position: relative;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.85);
 }
+
 
 .hero-title-mobile::after {
   content: attr(data-text);
@@ -1329,6 +1334,7 @@ filter: saturate(.9) contrast(1.05);
     border-radius: 0;
   }
 }
+
 
 
 
