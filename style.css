@@ -251,9 +251,22 @@ body {
 }
 
 #p5-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;      /* ajustá esto */
+  max-height: 520px; /* opcional */
+  overflow: hidden;
+}
+
+#p5-hero canvas {
   position: absolute;
-  inset: 0;
-  z-index: 0;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 768px) {
+  #p5-hero {
+    height: 45vh;
+  }
 }
 
 .hero-title {
@@ -1313,4 +1326,5 @@ filter: saturate(.9) contrast(1.05);
     border-radius: 0;
   }
 }
+
 
