@@ -272,11 +272,10 @@ pointer-events: none;
 }
 
 .hero-title-mobile {
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 6px rgba(160, 220, 255, 0.22),
+    0 0 18px rgba(160, 220, 255, 0.1);
 }
 
 
