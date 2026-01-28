@@ -162,6 +162,7 @@ function setup() {
 
   const canvas = createCanvas(windowWidth, windowHeight)
   canvas.parent('p5-hero')
+  canvas.style('touch-action', 'auto')
 
   frameRate(windowWidth < 768 ? 18 : 24)
 
@@ -290,3 +291,4 @@ class BezierLine {
     )
   }
 }
+
