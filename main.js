@@ -156,12 +156,16 @@ let letters = "Dalia Multimedia"
 let fontSizeMin = 14
 let counter = 0
 let active = false
+let hero
 
 function setup() {
-  pixelDensity(1)
+  hero = document.getElementById('p5-hero')
 
-  const canvas = createCanvas(windowWidth, windowHeight)
-  canvas.parent('p5-hero')
+  const dpr = window.devicePixelRatio > 1 ? 1 : window.devicePixelRatio
+  pixelDensity(dpr)
+
+  const canvas = createCanvas(hero.offsetWidth, hero.offsetHeight)
+  canvas.parent(hero)
   canvas.style('touch-action', 'auto')
 
   frameRate(windowWidth < 768 ? 18 : 24)
@@ -182,17 +186,14 @@ function draw() {
 
   if (!active) return
 
-  const px = touches.length ? touches[0].x : mouseX
-  const py = touches.length ? touches[0].y : mouseY
-
-  let d = dist(x, y, px, py)
+  let d = dist(x, y, mouseX, mouseY)
   textSize(fontSizeMin + d * 0.25)
 
   let letter = letters.charAt(counter)
   let step = textWidth(letter) + 2
 
   if (d > 10) {
-    let angle = atan2(py - y, px - x)
+    let angle = atan2(mouseY - y, mouseX - x)
 
     push()
     translate(x, y)
@@ -208,22 +209,7 @@ function draw() {
 }
 
 function mouseMoved() {
-  activate(mouseX, mouseY)
-}
-
-function touchMoved() {
-  if (touches.length) {
-    activate(touches[0].x, touches[0].y)
-  }
-  return false
-}
-
-function activate(px, py) {
-  if (!active) {
-    x = px
-    y = py
-  }
-
+  if (mouseY < 0 || mouseY > height) return
   active = true
   loop()
   redraw()
@@ -231,29 +217,22 @@ function activate(px, py) {
 }
 
 function mousePressed() {
-  resetSketch(mouseX, mouseY)
-}
-
-function touchStarted() {
-  if (touches.length) {
-    resetSketch(touches[0].x, touches[0].y)
-  }
-  return false
-}
-
-function resetSketch(px, py) {
+  if (mouseY < 0 || mouseY > height) return
   background(10, 12, 18)
   generateBezierLines()
-  x = px
-  y = py
+  x = mouseX
+  y = mouseY
   counter = 0
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight)
+  resizeCanvas(hero.offsetWidth, hero.offsetHeight)
   background(10, 12, 18)
   generateBezierLines()
 }
+
+function touchStarted() { return false }
+function touchMoved() { return false }
 
 function generateBezierLines() {
   bezierLines = []
