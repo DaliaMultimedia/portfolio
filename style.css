@@ -273,29 +273,17 @@ pointer-events: none;
 
 .hero-title-mobile {
   position: relative;
-  z-index: 2;
-  margin: 0;
-  padding: 24px 20px;
-
-  font-family: 'Inter', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 1.2;
-
-  color: #fff;
-  text-align: left;
 }
-.hero::after {
-  content: "";
+
+.hero-title-mobile::after {
+  content: attr(data-text);
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(10,12,18,0.75),
-    rgba(10,12,18,0.2)
-  );
-  z-index: 1;
+  color: rgba(160, 220, 255, 0.35);
+  transform: translate(1px, 1px);
+  pointer-events: none;
 }
+
 
 /* Desktop: ocultar título */
 @media (min-width: 768px) {
@@ -1341,6 +1329,7 @@ filter: saturate(.9) contrast(1.05);
     border-radius: 0;
   }
 }
+
 
 
 
