@@ -158,17 +158,12 @@ let counter = 0
 let active = false
 
 function setup() {
-  const dpr = window.devicePixelRatio > 1 ? 1 : window.devicePixelRatio
-  pixelDensity(dpr)
+  pixelDensity(1)
 
   const canvas = createCanvas(windowWidth, windowHeight)
   canvas.parent('p5-hero')
 
-  if (windowWidth < 768) {
-    frameRate(18)
-  } else {
-    frameRate(24)
-  }
+  frameRate(windowWidth < 768 ? 18 : 24)
 
   background(10, 12, 18)
   textFont('Arial')
@@ -186,14 +181,17 @@ function draw() {
 
   if (!active) return
 
-  let d = dist(x, y, mouseX, mouseY)
+  const px = touches.length ? touches[0].x : mouseX
+  const py = touches.length ? touches[0].y : mouseY
+
+  let d = dist(x, y, px, py)
   textSize(fontSizeMin + d * 0.25)
 
   let letter = letters.charAt(counter)
   let step = textWidth(letter) + 2
 
   if (d > 10) {
-    let angle = atan2(mouseY - y, mouseX - x)
+    let angle = atan2(py - y, px - x)
 
     push()
     translate(x, y)
@@ -209,6 +207,22 @@ function draw() {
 }
 
 function mouseMoved() {
+  activate(mouseX, mouseY)
+}
+
+function touchMoved() {
+  if (touches.length) {
+    activate(touches[0].x, touches[0].y)
+  }
+  return false
+}
+
+function activate(px, py) {
+  if (!active) {
+    x = px
+    y = py
+  }
+
   active = true
   loop()
   redraw()
@@ -216,10 +230,21 @@ function mouseMoved() {
 }
 
 function mousePressed() {
+  resetSketch(mouseX, mouseY)
+}
+
+function touchStarted() {
+  if (touches.length) {
+    resetSketch(touches[0].x, touches[0].y)
+  }
+  return false
+}
+
+function resetSketch(px, py) {
   background(10, 12, 18)
   generateBezierLines()
-  x = mouseX
-  y = mouseY
+  x = px
+  y = py
   counter = 0
 }
 
@@ -257,7 +282,11 @@ class BezierLine {
     stroke(this.color)
     strokeWeight(this.strokeWidth)
     noFill()
-    bezier(this.x1, this.y1, this.x2, this.y2, this.x3, this.y3, this.x4, this.y4)
+    bezier(
+      this.x1, this.y1,
+      this.x2, this.y2,
+      this.x3, this.y3,
+      this.x4, this.y4
+    )
   }
 }
-
