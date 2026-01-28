@@ -150,3 +150,114 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 })
+let bezierLines = []
+let x = 0, y = 0
+let letters = "Dalia Multimedia"
+let fontSizeMin = 14
+let counter = 0
+let active = false
+
+function setup() {
+  const dpr = window.devicePixelRatio > 1 ? 1 : window.devicePixelRatio
+  pixelDensity(dpr)
+
+  const canvas = createCanvas(windowWidth, windowHeight)
+  canvas.parent('p5-hero')
+
+  if (windowWidth < 768) {
+    frameRate(18)
+  } else {
+    frameRate(24)
+  }
+
+  background(10, 12, 18)
+  textFont('Arial')
+  fill(255)
+  textAlign(LEFT, BASELINE)
+
+  generateBezierLines()
+  noLoop()
+}
+
+function draw() {
+  for (let line of bezierLines) {
+    line.display()
+  }
+
+  if (!active) return
+
+  let d = dist(x, y, mouseX, mouseY)
+  textSize(fontSizeMin + d * 0.25)
+
+  let letter = letters.charAt(counter)
+  let step = textWidth(letter) + 2
+
+  if (d > 10) {
+    let angle = atan2(mouseY - y, mouseX - x)
+
+    push()
+    translate(x, y)
+    rotate(angle)
+    text(letter, 0, 0)
+    pop()
+
+    x += cos(angle) * step
+    y += sin(angle) * step
+
+    counter = (counter + 1) % letters.length
+  }
+}
+
+function mouseMoved() {
+  active = true
+  loop()
+  redraw()
+  noLoop()
+}
+
+function mousePressed() {
+  background(10, 12, 18)
+  generateBezierLines()
+  x = mouseX
+  y = mouseY
+  counter = 0
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight)
+  background(10, 12, 18)
+  generateBezierLines()
+}
+
+function generateBezierLines() {
+  bezierLines = []
+  let numLines = windowWidth < 768 ? 1 : 2
+
+  for (let i = 0; i < numLines; i++) {
+    bezierLines.push(new BezierLine())
+  }
+}
+
+class BezierLine {
+  constructor() {
+    this.x1 = random(width)
+    this.y1 = random(height)
+    this.x2 = random(width)
+    this.y2 = random(height)
+    this.x3 = random(width)
+    this.y3 = random(height)
+    this.x4 = random(width)
+    this.y4 = random(height)
+
+    this.strokeWidth = random(0.6, 1.2)
+    this.color = color(160, 220, 255, 40)
+  }
+
+  display() {
+    stroke(this.color)
+    strokeWeight(this.strokeWidth)
+    noFill()
+    bezier(this.x1, this.y1, this.x2, this.y2, this.x3, this.y3, this.x4, this.y4)
+  }
+}
+
