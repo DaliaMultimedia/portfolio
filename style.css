@@ -551,7 +551,43 @@ pointer-events: none;
 /* =====================
    PROJECTS — MOBILE FIRST
 ===================== */
+.services-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
 
+.primary-button {
+ margin-top: 48px;
+  padding: 18px;
+  text-align: center;
+
+  border-radius: 18px;
+
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+  color: white;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.35), transparent 40%),
+    linear-gradient(135deg, #4fc3ff, #1e6bd6);
+  box-shadow:
+    0 10px 30px rgba(79,195,255,.45),
+    inset 0 0 0 1px rgba(255,255,255,.35);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.primary-button:hover {
+  transform: scale(.97);
+  box-shadow:
+    0 6px 20px rgba(79,195,255,.4),
+    inset 0 0 0 1px rgba(255,255,255,.5);
+}
 .projects {
   padding: 96px 20px 120px;
   max-width: 720px;
@@ -1323,6 +1359,7 @@ filter: saturate(.9) contrast(1.05);
     border-radius: 0;
   }
 }
+
 
 
 
