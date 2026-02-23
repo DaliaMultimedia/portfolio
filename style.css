@@ -551,6 +551,7 @@ pointer-events: none;
 /* =====================
    PROJECTS — MOBILE FIRST
 ===================== */
+}
 .services-cta {
   display: flex;
   justify-content: center;
@@ -588,30 +589,6 @@ pointer-events: none;
     0 6px 20px rgba(79,195,255,.4),
     inset 0 0 0 1px rgba(255,255,255,.5);
 }
-.projects {
-  padding: 96px 20px 120px;
-  max-width: 720px;
-  margin: auto;
-}
-
-.projects-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: .9rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  opacity: .6;
-  margin-bottom: 64px;
-}
-
-.project {
-  margin-bottom: 96px;
-  position: relative;
-}
-
-.project:last-child {
-  margin-bottom: 0;
-}
-
 .project-tag {
   display: inline-block;
   font-family: 'Sora', sans-serif;
@@ -1359,6 +1336,7 @@ filter: saturate(.9) contrast(1.05);
     border-radius: 0;
   }
 }
+
 
 
 
