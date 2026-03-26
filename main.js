@@ -27,42 +27,6 @@ const revealOnScroll = () => {
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 
-const canvas = document.querySelector('.about-canvas');
-
-if (canvas) {
-  const ctx = canvas.getContext('2d');
-
-  const resize = () => {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  };
-
-  resize();
-  window.addEventListener('resize', resize);
-
-  let t = 0;
-
-  const draw = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.strokeStyle = 'rgba(120,200,255,.6)';
-    ctx.lineWidth = 1;
-
-    ctx.beginPath();
-    for (let x = 0; x < canvas.width; x += 8) {
-      const y =
-        canvas.height / 2 +
-        Math.sin(x * 0.01 + t) * 12;
-      ctx.lineTo(x, y);
-    }
-    ctx.stroke();
-
-    t += 0.01;
-    requestAnimationFrame(draw);
-  };
-
-  draw();
-}
 
 const pricingItems = document.querySelectorAll('.pricing-item');
 
@@ -270,4 +234,3 @@ class BezierLine {
     )
   }
 }
-
