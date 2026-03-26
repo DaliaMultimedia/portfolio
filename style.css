@@ -1,4 +1,4 @@
-/* =====================
+* =====================
    BASE
 ===================== */
 :root {
@@ -245,10 +245,9 @@ body {
 ===================== */
 .hero {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background: #0a0c12;
+  height: 100vh;
   overflow: hidden;
+  background: #0a0c12;
 }
 
 #p5-hero {
@@ -261,7 +260,6 @@ body {
 
 #p5-hero canvas {
   position: absolute;
-pointer-events: none;
   top: 0;
   left: 0;
 }
@@ -271,20 +269,35 @@ pointer-events: none;
   }
 }
 
-.hero-title-mobile {
-  letter-spacing: 0.04em;
-  text-shadow:
-    0 0 6px rgba(160, 220, 255, 0.22),
-    0 0 18px rgba(160, 220, 255, 0.1);
+.hero-title {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 0 20px;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+}
+
+.hero-title span {
+  font-size: 0.6em;
+  opacity: 0.6;
 }
 
 
-/* Desktop: ocultar título */
+/* desktop */
 @media (min-width: 768px) {
-  .hero-title-mobile {
-    display: none;
+  .hero {
+    min-height: 85vh;
   }
 }
+
+
 /* =====================
    DESKTOP ENHANCEMENTS
 ===================== */
@@ -551,44 +564,31 @@ pointer-events: none;
 /* =====================
    PROJECTS — MOBILE FIRST
 ===================== */
+
+.projects {
+  padding: 96px 20px 120px;
+  max-width: 720px;
+  margin: auto;
 }
-.services-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-}
 
-.primary-button {
- margin-top: 48px;
-  padding: 18px;
-  text-align: center;
-
-  border-radius: 18px;
-
-  font-family: 'Sora', sans-serif;
-  font-size: 1.05rem;
-  letter-spacing: .08em;
+.projects-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .9rem;
+  letter-spacing: .12em;
   text-transform: uppercase;
-
-  text-decoration: none;
-  color: white;
-  background:
-    radial-gradient(circle at top left, rgba(255,255,255,.35), transparent 40%),
-    linear-gradient(135deg, #4fc3ff, #1e6bd6);
-  box-shadow:
-    0 10px 30px rgba(79,195,255,.45),
-    inset 0 0 0 1px rgba(255,255,255,.35);
-
-  transition: transform .25s ease, box-shadow .25s ease;
+  opacity: .6;
+  margin-bottom: 64px;
 }
 
-.primary-button:hover {
-  transform: scale(.97);
-  box-shadow:
-    0 6px 20px rgba(79,195,255,.4),
-    inset 0 0 0 1px rgba(255,255,255,.5);
+.project {
+  margin-bottom: 96px;
+  position: relative;
 }
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
 .project-tag {
   display: inline-block;
   font-family: 'Sora', sans-serif;
@@ -714,7 +714,43 @@ pointer-events: none;
     );
   pointer-events: none;
 }
+.services-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
 
+.primary-button {
+ margin-top: 48px;
+  padding: 18px;
+  text-align: center;
+
+  border-radius: 18px;
+
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+  color: white;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.35), transparent 40%),
+    linear-gradient(135deg, #4fc3ff, #1e6bd6);
+  box-shadow:
+    0 10px 30px rgba(79,195,255,.45),
+    inset 0 0 0 1px rgba(255,255,255,.35);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.primary-button:hover {
+  transform: scale(.97);
+  box-shadow:
+    0 6px 20px rgba(79,195,255,.4),
+    inset 0 0 0 1px rgba(255,255,255,.5);
+}
 /* =====================
    PROCESS — MOBILE FIRST
 ===================== */
@@ -1336,12 +1372,4 @@ filter: saturate(.9) contrast(1.05);
     border-radius: 0;
   }
 }
-
-
-
-
-
-
-
-
 
