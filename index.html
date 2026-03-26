@@ -33,7 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&family=Sora:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
@@ -57,7 +57,6 @@
     <nav class="nav-links">
       <a href="#about">Sobre mí</a>
       <a href="#projects">Proyectos</a>
-      <a href="#process">Proceso</a>
       <a href="#services">Servicios</a>
       <a href="#contact">Contacto</a>
        <a href="#faq" class="nav-faq">FAQ</a>
@@ -80,7 +79,6 @@
 
     <a href="#about">Sobre mí</a>
     <a href="#projects">Proyectos</a>
-    <a href="#process">Proceso</a>
     <a href="#services">Servicios</a>
     <a href="#contact">Contacto</a>
 
@@ -129,10 +127,6 @@
         a través del movimiento, la tipografía y el código.
       </p>
 
-      <p class="manifesto reveal">
-        Escribo código como quien compone una obra.
-      </p>
-
       <canvas class="about-canvas" aria-hidden="true"></canvas>
  </div>
     </section>
@@ -140,115 +134,77 @@
     <!-- DIVISOR -->
     <div class="section-divider"></div>
 
-    <!-- PROYECTOS -->
-    <section class="projects" id="projects">
+   <!-- PROYECTOS -->
+<section class="projects" id="projects">
 
-      <h2 class="projects-title">Proyectos</h2>
+  <h2 class="projects-title">Proyectos</h2>
 
-     <!-- Gempre -->
-<article class="project project-commercial reveal">
+  <div class="projects-track">
 
-  <span class="project-tag">Comercial</span>
+    <!-- Gempre -->
+    <article class="project project-commercial reveal">
 
-  <h3 class="project-title">Gempre</h3>
+      <span class="project-tag">Comercial</span>
 
-  <div class="project-media">
-    <img
-      src="img/Instagram post - 1.png"
-      alt="Vista previa del sitio web Gempre"
-      loading="lazy"
-    >
+      <h3 class="project-title">Gempre</h3>
+
+      <div class="project-media">
+        <img
+          src="img/Instagram post - 1.png"
+          alt="Vista previa del sitio web Gempre"
+          loading="lazy"
+        >
+      </div>
+
+      <p class="project-description">
+        Sitio web comercial enfocado en claridad,
+        conversión y una identidad visual sobria.
+      </p>
+
+      <a
+        href="#modal-gempre"
+        class="project-link"
+        data-modal="modal-gempre"
+      >
+        Ver proyecto
+      </a>
+
+    </article>
+
+
+    <!-- Amuri -->
+    <article class="project project-art reveal">
+
+      <span class="project-tag">Code Art</span>
+
+      <h3 class="project-title">Amuri</h3>
+
+      <div class="project-media">
+        <img
+          src="img/AMURI.png"
+          alt="Vista previa de la galería digital Amuri"
+          loading="lazy"
+        >
+      </div>
+
+      <p class="project-description">
+        Espacio de enlace entre el código,
+        la música, las artes visuales y la tecnología.
+      </p>
+
+      <a
+        href="https://amuri-beryl.vercel.app/"
+        class="project-link"
+        target="_blank"
+      >
+        Proyecto inmersivo
+      </a>
+
+    </article>
+
   </div>
 
-  <p class="project-description">
-    Sitio web comercial enfocado en claridad,
-    conversión y una identidad visual sobria.
-  </p>
-
- <a
-  href="#modal-gempre"
-  class="project-link"
-  data-modal="modal-gempre"
->
-  Ver proyecto
-</a>
-
-
-</article>
-
-
-      <!-- Amuri -->
-      <article class="project project-art reveal">
-
-        <span class="project-tag">Code Art</span>
-
-        <h3 class="project-title">Amuri</h3>
-
-        <div class="project-media">
-          <img
-            src="/img/AMURI.png"
-            alt="Vista previa de la galería digital Amuri"
-            loading="lazy"
-          >
-        </div>
-
-        <p class="project-description">
-         Espacio de enlace entre el código
-          la música, las artes visuales y la tecnología.
-        </p>
-
-        <a href="https://amuri-beryl.vercel.app/" class="project-link">
-          Proyecto inmersivo
-        </a>
-
-      </article>
-
-    </section>
-
-    <!-- DIVISOR ENTRE PROYECTOS Y PROCESO -->
-    <div class="section-divider projects-divider"></div>
-
-    <!-- PROCESO -->
-    <section class="process" id="process">
-
-      <h2 class="process-title">Proceso</h2>
-
-      <ol class="process-steps">
-
-        <li class="process-step reveal">
-          <span class="step-number">01</span>
-          <h3>Diagnóstico Estratégico</h3>
-          <p>
-            Entendemos tu negocio, tu público y tus objetivos reales.
-          </p>
-        </li>
-
-        <li class="process-step reveal">
-          <span class="step-number">02</span>
-          <h3>Arquitectura & Diseño</h3>
-          <p>
-           Creamos una experiencia clara, enfocada en conversión y adaptada a mobile.
-          </p>
-        </li>
-
-        <li class="process-step reveal">
-          <span class="step-number">03</span>
-          <h3>Desarrollo & Optimización</h3>
-          <p>
-       Código limpio, velocidad, animaciones sutiles y experiencia fluida.
-          </p>
-        </li>
-
-        <li class="process-step reveal">
-          <span class="step-number">04</span>
-          <h3>Lanzamiento & Acompañamiento</h3>
-          <p>
-          Publicamos, medimos y ajustamos según resultados.
-          </p>
-        </li>
-
-      </ol>
-
+</section>
       <!-- DIVISOR -->
 <div class="section-divider"></div>
 
@@ -258,48 +214,79 @@
 
   <ul class="services-list">
 
+   <li class="service-item reveal">
+
+  <h3>Sitios Web Estratégicos</h3>
+
+  <p>
+    Diseño y desarrollo de sitios web pensados para convertir visitas en clientes.
+  </p>
+
+  <p class="service-includes">Incluye:</p>
+
+  <ul>
+    <li>Estrategia y posicionamiento</li>
+    <li>Diseño mobile-first</li>
+    <li>Desarrollo optimizado</li>
+    <li>SEO básico</li>
+    <li>Implementación y lanzamiento</li>
+  </ul>
+
+  <a 
+href="https://wa.me/5491168003771?text=Hola%20quiero%20cotizar%20un%20sitio%20web%20estratégico"
+class="service-cta"
+target="_blank"
+>
+Cotizar este servicio
+</a>
+
+</li>
+
     <li class="service-item reveal">
-      <h3>Sitios Web Estratégicos</h3>
-      <p>
-       Diseño y desarrollo de sitios web pensados para convertir visitas en clientes.
-      </p>
-      <ul>
 
-Incluye:
+  <h3>Experiencias Web Interactivas</h3>
 
-<li>Estrategia y posicionamiento</li>
+  <p>
+    Experiencias digitales con animación, interacción y carácter visual único.
+    Ideal para marcas creativas, artistas o proyectos culturales.
+  </p>
 
-<li>Diseño mobile-first</li>
+  <a 
+  href="https://wa.me/5491168003771?text=Hola%20quiero%20cotizar%20una%20experiencia%20web%20interactiva"
+  class="service-cta"
+  target="_blank"
+  >
+  Cotizar experiencia interactiva
+  </a>
 
-<li>Desarrollo optimizado</li>
-
-<li>SEO básico</li>
-
-<li>Implementación y lanzamiento</li></ul>
-    </li>
-
-    <li class="service-item reveal">
-      <h3>Experiencias Web Interactivas</h3>
-      <p>
-        Experiencias digitales con animación, interacción y carácter visual único.
-
-Ideal para marcas creativas, artistas o proyectos culturales.
-      </p>
-    </li>
+</li>
 
     <li class="service-item reveal">
-      <h3>Optimización & Crecimiento</h3>
-      <p>
-        Mejoro sitios existentes para que carguen más rápido, comuniquen mejor y conviertan más.
-      </p>
-      <ul>Incluye:
-        <li>Mejora de performance</li>
-        <li>Ajuste de UX</li>
-        <li>Reestructuración de contenido</li>
-        <li>SEO técnico</li>
-      </ul>
-    </li>
 
+  <h3>Optimización & Crecimiento</h3>
+
+  <p>
+    Mejoro sitios existentes para que carguen más rápido, comuniquen mejor y conviertan más.
+  </p>
+
+  <p class="service-includes">Incluye:</p>
+
+  <ul>
+    <li>Mejora de performance</li>
+    <li>Ajuste de UX</li>
+    <li>Reestructuración de contenido</li>
+    <li>SEO técnico</li>
+  </ul>
+
+  <a 
+  href="https://wa.me/5491168003771?text=Hola%20quiero%20cotizar%20la%20optimización%20y%20mejora%20de%20mi%20sitio%20web"
+  class="service-cta"
+  target="_blank"
+  >
+  Cotizar optimización web
+  </a>
+
+</li>
     <li class="service-item reveal">
       <h3>Soporte & Evolución Mensual</h3>
       <p>
@@ -422,50 +409,29 @@ Ideal para marcas creativas, artistas o proyectos culturales.
     podés escribirme o seguir mi trabajo en estos espacios:
   </p>
 
-  <ul class="contact-list">
+  <div class="contact-icons">
 
-    <li>
-      <span class="contact-label">Email</span>
-      <a href="mailto:pastenedaliam@gmail.com">
-       dalia.multimedia@gmail.com
-      </a>
-    </li>
+    <a href="mailto:dalia.multimedia@gmail.com" aria-label="Email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
 
-    <li>
-      <span class="contact-label">Instagram</span>
-      <a href="https://www.instagram.com/dalia.multimedia/" target="_blank">
-       www.instagram.com/dalia.multimedia/
-      </a>
-    </li>
+    <a href="https://www.instagram.com/dalia.multimedia/" target="_blank" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
 
-    <li>
-      <span class="contact-label">Behance</span>
-      <a href="https://www.behance.net/daliamultimedia" target="_blank">
-      www.behance.net/daliamultimedia
-      </a>
-    </li>
+    <a href="https://www.behance.net/daliamultimedia" target="_blank" aria-label="Behance">
+      <i class="fa-brands fa-behance"></i>
+    </a>
 
-    <li>
-      <span class="contact-label">LinkedIn</span>
-      <a href="https://www.linkedin.com/in/dalpast/" target="_blank">
-       www.linkedin.com/in/dalpast
-      </a>
-    </li>
+    <a href="https://www.linkedin.com/in/dalpast/" target="_blank" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
 
-    <li>
-      <span class="contact-label">itch.io</span>
-      <a href="https://dalia-multimedia.itch.io" target="_blank">
-      dalia-multimedia.itch.io
-      </a>
-    </li>
-    <li>
-      <span class="contact-label">Proyecto inmersivo</span>
-      <a href="https://TU_USUARIO.itch.io" target="_blank">
-        Amuri
-      </a>
-    </li>
+    <a href="https://dalia-multimedia.itch.io" target="_blank" aria-label="itch.io">
+      <i class="fa-brands fa-itch-io"></i>
+    </a>
 
-  </ul>
+  </div>
 
 </section>
 
@@ -538,9 +504,3 @@ Ideal para marcas creativas, artistas o proyectos culturales.
 
 </body>
 </html>
-
-
-
-
-
-
