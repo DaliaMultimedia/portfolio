@@ -216,7 +216,6 @@ function mouseMoved() {
   noLoop()
 }
 
-
 function mousePressed() {
   if (mouseY < 0 || mouseY > height) return
   background(10, 12, 18)
@@ -231,6 +230,9 @@ function windowResized() {
   background(10, 12, 18)
   generateBezierLines()
 }
+
+function touchStarted() { return false }
+function touchMoved() { return false }
 
 function generateBezierLines() {
   bezierLines = []
@@ -268,6 +270,4 @@ class BezierLine {
     )
   }
 }
-
-
 
