@@ -250,25 +250,22 @@ body {
   background: #0a0c12;
 }
 
+/* el canvas ocupa TODO el hero */
 #p5-hero {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 60vh;      /* ajustá esto */
-  max-height: 520px; /* opcional */
-  overflow: hidden;
+  height: 100%;
 }
 
 #p5-hero canvas {
   position: absolute;
-  top: 0;
-  left: 0;
-}
-@media (max-width: 768px) {
-  #p5-hero {
-    height: 45vh;
-  }
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
 }
 
+/* texto encima del canvas */
 .hero-title {
   position: relative;
   z-index: 2;
@@ -288,16 +285,6 @@ body {
   font-size: 0.6em;
   opacity: 0.6;
 }
-
-
-/* desktop */
-@media (min-width: 768px) {
-  .hero {
-    min-height: 85vh;
-  }
-}
-
-
 /* =====================
    DESKTOP ENHANCEMENTS
 ===================== */
@@ -338,381 +325,224 @@ body {
     display: none;
   }
 }
-
 /* =====================
-   ABOUT — MOBILE FIRST
+ABOUT — CARD LAYOUT
 ===================== */
 
 .about {
-  padding: 96px 20px;
-  max-width: 680px;
-  margin: auto;
+max-width: 1100px;
+margin: 120px auto;
+padding: 48px;
+
+display: grid;
+grid-template-columns: 360px 1fr;
+gap: 64px;
+align-items: start;
+
+background: rgba(18, 20, 28, 0.85);
+border-radius: 28px;
+
+box-shadow:
+0 40px 100px rgba(0,0,0,.45),
+inset 0 0 0 1px rgba(255,255,255,.06);
+
+backdrop-filter: blur(10px);
 }
 
-.about h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.8rem;
-  margin-bottom: 32px;
-  opacity: .85;
+/* =====================
+IMAGE
+===================== */
+
+.about-media img {
+width: 100%;
+height: 100%;
+object-fit:cover;
+
+border-radius: 20px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.35);
+}
+
+/* =====================
+TEXT CONTENT
+===================== */
+
+.about-content h2 {
+font-family: 'Space Grotesk', sans-serif;
+font-size: 2rem;
+margin-bottom: 2px;
 }
 
 .about-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  line-height: 1.7;
-  opacity: .75;
-  margin-bottom: 24px;
-}
-
-/* =====================
-   ABOUT — POETIC DETAILS
-===================== */
-
-.about {
-  position: relative;
-}
-
-.about::before {
-  content: "";
-  position: absolute;
-  top: 32px;
-  left: 20px;
-  width: 120px;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(120,200,255,.6),
-    transparent
-  );
-  opacity: .6;
-}
-
-.about h2 {
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  font-size: .9rem;
-  opacity: .6;
+font-family: 'Inter', sans-serif;
+font-size: 1rem;
+line-height: 1.75;
+opacity: .8;
+margin-bottom: 18px;
 }
 
 .about-text.lead {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.15rem;
-  line-height: 1.5;
-  opacity: .9;
-}
-
-.about-text {
-  max-width: 520px;
-}
-/* =====================
-   ABOUT — DESKTOP COMPOSITION
-===================== */
-
-@media (min-width: 992px) {
-
-  .about {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 96px;
-    align-items: start;
-  }
-
-   .about-media img {
-    border-radius: 24px;
-    box-shadow:
-      0 30px 80px rgba(0,0,0,.4),
-      inset 0 0 0 1px rgba(255,255,255,.12);
-  }
-
-  .about-text {
-    max-width: 520px;
-  }
-
-  .manifesto {
-    margin-top: 64px;
-    font-size: 1.4rem;
-    opacity: .8;
-  }
-
+font-family: 'Space Grotesk', sans-serif;
+font-size: 1.2rem;
+opacity: .95;
 }
 
 /* =====================
-   ABOUT — TEXT WRAP (DESKTOP)
-===================== */
-
-@media (min-width: 992px) {
-
-  .about {
-    max-width: 900px;
-  }
-
-  .about-media {
-    float: left;
-    width: 320px;
-    margin-top: 20px;
-  }
-
-  .about-text {
-    line-height: 1.75;
-  }
-
-  .manifesto {
-    clear: both;
-    margin-top: 48px;
-    font-size: 1.4rem;
-    opacity: .85;
-  }
-}
-
-/* =====================
-   SCROLL REVEAL
-===================== */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity .8s ease,
-    transform .8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =====================
-   ABOUT CANVAS
+CANVAS DECORATION
 ===================== */
 
 .about-canvas {
-  width: 100%;
-  height: 120px;
-  margin-top: 48px;
-  opacity: .35;
+width: 100%;
+height: 120px;
+margin-top: 32px;
+opacity: .35;
 }
 
 /* =====================
-   MANIFESTO
+MOBILE
 ===================== */
 
-.manifesto {
-  margin-top: 56px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.3rem;
-  line-height: 1.4;
-  opacity: .9;
+@media (max-width: 900px) {
 
-  max-width: 520px;
-
-  position: relative;
-  padding-left: 20px;
+.about {
+grid-template-columns: 1fr;
+padding: 36px;
+gap: 32px;
 }
 
-.manifesto::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: .2em;
-  width: 2px;
-  height: 70%;
-  background: linear-gradient(
-    180deg,
-    rgba(120,200,255,.8),
-    transparent
-  );
+.about-media img {
+max-height: 420px;
 }
 
-/* =====================
-   EXPRESSIVE TYPE
-===================== */
+}
+/* =========================
+   PROJECTS SECTION
+========================= */
 
-.manifesto {
-  font-variation-settings: "wght" 450;
-  letter-spacing: .01em;
+.projects{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
 }
 
-.manifesto span {
-  position: relative;
-  display: inline-block;
-
-  font-variation-settings: "wght" 600;
-  letter-spacing: .04em;
-
-  background: linear-gradient(
-    120deg,
-    rgba(190, 139, 238, 0.9),
-    rgba(171, 121, 224, 0.9),
-    rgba(174, 142, 231, 0.9)
-  );
-
-  background-size: 200% 100%;
-  background-position: 0% 50%;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 0 12px rgba(120,200,255,.25);
-
-  transition: background-position 2s ease;
-}
-.manifesto.visible span {
-  background-position: 100% 50%;
+.projects-title{
+  font-size:0.9rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  opacity:0.6;
+  margin-bottom:60px;
 }
 
-/* =====================
-   PROJECTS — MOBILE FIRST
-===================== */
 
-.projects {
-  padding: 96px 20px 120px;
-  max-width: 720px;
-  margin: auto;
+/* =========================
+   PROJECTS LAYOUT
+========================= */
+
+.projects-track{
+
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+
 }
 
-.projects-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: .9rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  opacity: .6;
-  margin-bottom: 64px;
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width:900px){
+
+  .projects-track{
+
+    grid-template-columns:1fr 1fr;
+
+  }
+
 }
 
-.project {
-  margin-bottom: 96px;
-  position: relative;
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project{
+
+  background:rgba(255,255,255,0.03);
+  border-radius:20px;
+
+  padding:28px;
+
+  transition:0.3s;
 }
 
-.project:last-child {
-  margin-bottom: 0;
+.project:hover{
+  transform:translateY(-6px);
 }
 
-.project-tag {
-  display: inline-block;
-  font-family: 'Sora', sans-serif;
-  font-size: .7rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  opacity: .6;
-  margin-bottom: 16px;
+
+/* =========================
+   IMAGE
+========================= */
+
+.project-media{
+
+  margin:20px 0;
+
+  border-radius:14px;
+  overflow:hidden;
+
 }
 
-.project-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.2rem;
-  margin: 0 0 24px;
+.project-media img{
+
+  width:100%;
+  display:block;
+
 }
 
-.project-description {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: .75;
-  max-width: 520px;
-  margin-bottom: 32px;
+
+/* =========================
+   TEXT
+========================= */
+
+.project-tag{
+
+  font-size:0.7rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+
+  opacity:0.6;
+
 }
 
-.project-link {
-  font-family: 'Sora', sans-serif;
-  font-size: .8rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: white;
-  opacity: .8;
-  position: relative;
+.project-title{
+
+  font-size:1.8rem;
+  margin:10px 0 16px;
+
 }
 
-.project-link::after {
-  content: "→";
-  margin-left: 8px;
-  transition: transform .3s ease;
+.project-description{
+
+  line-height:1.5;
+  opacity:0.75;
+
 }
 
-.project-link:hover::after {
-  transform: translateX(4px);
-}
-.project-commercial .project-title {
-  opacity: .9;
-}
+.project-link{
 
-.project-commercial::before {
-  content: "";
-  position: absolute;
-  inset: -24px -20px;
-  border-radius: 24px;
-  background: rgba(255,255,255,.03);
-  z-index: -1;
-}
-.project-art .project-title {
-  background: linear-gradient(
-    120deg,
-    rgba(255,255,255,.9),
-    rgba(120,200,255,.9),
-    rgba(255,255,255,.9)
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  display:inline-block;
 
-.project-art {
-  position: relative;
-}
+  margin-top:18px;
 
-.project-art::after {
-  content: "";
-  position: absolute;
-  left: -20px;
-  bottom: -40px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(
-    circle,
-    rgba(120,200,255,.25),
-    transparent 70%
-  );
-  filter: blur(30px);
-}
+  font-size:0.8rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
 
-/* =====================
-   PROJECT MEDIA
-===================== */
+  text-decoration:none;
 
-.project-media {
-  margin: 32px 0;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-.project-media img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.project-commercial .project-media {
-  box-shadow:
-    0 12px 30px rgba(0,0,0,.25);
-}
-
-.project-art .project-media {
-  position: relative;
-}
-
-.project-art .project-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle at 30% 30%,
-      rgba(120,200,255,.25),
-      transparent 60%
-    );
-  pointer-events: none;
 }
 .services-cta {
   display: flex;
@@ -750,75 +580,6 @@ body {
   box-shadow:
     0 6px 20px rgba(79,195,255,.4),
     inset 0 0 0 1px rgba(255,255,255,.5);
-}
-/* =====================
-   PROCESS — MOBILE FIRST
-===================== */
-
-.process {
-  padding: 96px 20px;
-  max-width: 720px;
-  margin: auto;
-}
-
-.process-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: .9rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  opacity: .6;
-  margin-bottom: 64px;
-}
-
-.process-steps {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.process-step {
-  margin-bottom: 64px;
-  position: relative;
-}
-
-.process-step:last-child {
-  margin-bottom: 0;
-}
-
-.step-number {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: .75rem;
-  letter-spacing: .14em;
-  opacity: .4;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.process-step h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.4rem;
-  margin: 0 0 16px;
-}
-
-.process-step p {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: .75;
-  max-width: 520px;
-}
-.process-step::before {
-  content: "";
-  position: absolute;
-  left: -20px;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(120,200,255,.4),
-    transparent
-  );
 }
 /* =====================
    SECTION DIVIDER — BASE
@@ -896,7 +657,37 @@ body {
   opacity: .75;
   max-width: 520px;
 }
+.service-cta {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 22px;
 
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .9rem;
+  letter-spacing: .04em;
+
+  color: white;
+  text-decoration: none;
+
+  background: linear-gradient(
+    135deg,
+    #4fd1ff,
+    #6a7cff
+  );
+
+  border-radius: 999px;
+
+  transition: 
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.service-cta:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(90,120,255,.35);
+}
 /* =====================
    FAQ — MOBILE FIRST
 ===================== */
@@ -1099,7 +890,50 @@ filter: saturate(.9) contrast(1.05);
 .contact-list a:hover {
   opacity: 1;
 }
+.contact-icons {
+  margin-top: 40px;
 
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.contact-icons a {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
+
+  color: white;
+  text-decoration: none;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.05);
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.contact-icons a:hover {
+
+  transform: translateY(-3px);
+
+  background: linear-gradient(
+    135deg,
+    #4fd1ff,
+    #6a7cff
+  );
+
+  box-shadow:
+    0 10px 30px rgba(80,120,255,.35);
+}
 /* =====================
    WHATSAPP FLOAT — ICON
 ===================== */
