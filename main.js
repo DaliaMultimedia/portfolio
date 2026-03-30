@@ -24,9 +24,17 @@ const revealOnScroll = () => {
   });
 };
 
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
+let ticking = false;
 
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      revealOnScroll();
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
 
 const pricingItems = document.querySelectorAll('.pricing-item');
 
@@ -132,7 +140,7 @@ function setup() {
   canvas.parent(hero)
  canvas.style('touch-action', 'none')
 
-  frameRate(windowWidth < 768 ? 18 : 24)
+ frameRate(windowWidth < 768 ? 12 : 24)
 
   background(10, 12, 18)
   textFont('Arial')
@@ -151,7 +159,9 @@ function draw() {
   if (!active) return
 
   let d = dist(x, y, mouseX, mouseY)
-  textSize(fontSizeMin + d * 0.25)
+  let size = fontSizeMin + d * 0.15
+size = constrain(size, fontSizeMin, 48)
+textSize(size)
 
   let letter = letters.charAt(counter)
   let step = textWidth(letter) + 2
@@ -175,9 +185,7 @@ function draw() {
 function mouseMoved() {
   if (mouseY < 0 || mouseY > height) return
   active = true
-  loop()
   redraw()
-  noLoop()
 }
 
 function mousePressed() {
@@ -214,7 +222,7 @@ function touchStarted() {
 
 function generateBezierLines() {
   bezierLines = []
-  let numLines = windowWidth < 768 ? 1 : 2
+let numLines = windowWidth < 768 ? 0 : 2
 
   for (let i = 0; i < numLines; i++) {
     bezierLines.push(new BezierLine())
