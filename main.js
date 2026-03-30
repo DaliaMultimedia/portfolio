@@ -130,7 +130,7 @@ function setup() {
 
   const canvas = createCanvas(hero.offsetWidth, hero.offsetHeight)
   canvas.parent(hero)
-  canvas.style('touch-action', 'auto')
+ canvas.style('touch-action', 'none')
 
   frameRate(windowWidth < 768 ? 18 : 24)
 
@@ -195,8 +195,22 @@ function windowResized() {
   generateBezierLines()
 }
 
-function touchStarted() { return false }
-function touchMoved() { return false }
+function touchStarted() {
+  if (mouseY < 0 || mouseY > height) return false
+
+  background(10, 12, 18)
+  generateBezierLines()
+  x = mouseX
+  y = mouseY
+  counter = 0
+
+  active = true
+  loop()
+  redraw()
+  noLoop()
+
+  return false
+}
 
 function generateBezierLines() {
   bezierLines = []
