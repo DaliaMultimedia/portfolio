@@ -1208,3 +1208,79 @@ filter: saturate(.9) contrast(1.05);
     border-radius: 0;
   }
 }
+/* =====================
+HERO MOBILE
+===================== */
+
+.hero-mobile{
+  display:none;
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 24px;
+}
+
+/* fondo animado */
+.hero-mobile-bg{
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(circle at 30% 40%, rgba(120,200,255,.35), transparent 60%),
+  radial-gradient(circle at 70% 60%, rgba(120,160,255,.25), transparent 60%),
+  linear-gradient(180deg,#06080f,#0a1533);
+
+  animation:heroDrift 14s ease-in-out infinite alternate;
+}
+
+/* texto */
+.hero-mobile-title{
+  position:relative;
+  z-index:2;
+
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(2.2rem,9vw,3rem);
+  line-height:1.2;
+}
+
+.hero-mobile-title span{
+  display:block;
+  margin-top:16px;
+
+  font-family:'Inter',sans-serif;
+  font-size:.9rem;
+  letter-spacing:.05em;
+
+  opacity:.7;
+}
+
+/* animación suave */
+@keyframes heroDrift{
+
+  0%{
+    transform:scale(1) translateY(0);
+    filter:hue-rotate(0deg);
+  }
+
+  100%{
+    transform:scale(1.1) translateY(-20px);
+    filter:hue-rotate(20deg);
+  }
+
+}
+/* MOBILE */
+
+@media (max-width:768px){
+
+  #p5-hero{
+    display:none;
+  }
+
+  .hero-mobile{
+    display:flex;
+  }
+
+}
