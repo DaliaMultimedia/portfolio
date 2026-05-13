@@ -12,19 +12,18 @@
 
 <meta name="author" content="Dalia Multimedia">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Open Graph -->
 <meta property="og:title" content="Dalia Multimedia | Arte y experiencias digitales">
 <meta property="og:description" content="Exploro arte interactivo, diseño web y experiencias digitales sensibles. Portfolio de obras y proyectos.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://daliamultimedia.vercel.app/">
-<meta property="og:image" content="https://daliamultimedia.vercel.app/img/portada.jpg">
+<meta property="og:url" content="https://daliamultimedia.com.ar/">
+<meta property="og:image" content="https://daliamultimedia.com.ar/img/portada.jpg">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dalia Multimedia | Arte interactivo">
 <meta name="twitter:description" content="Experiencias digitales, arte y tecnología con mirada sensible.">
-<meta name="twitter:image" content="https://daliamultimedia.vercel.app/img/portada.jpg">
+<meta name="twitter:image" content="https://daliamultimedia.com.ar/img/portada.jpg">
 
 
   <!-- Fonts -->
@@ -93,11 +92,23 @@
 </aside>
 
   <main>
-<!-- HERO -->
-<section class="hero">
-  <div id="p5-hero"></div>
-</section>
 
+<section class="hero">
+
+  <!-- HERO MOBILE -->
+  <div class="hero-mobile">
+    <div class="hero-mobile-bg"></div>
+
+    <h1 class="hero-mobile-title">
+      Dalia Multimedia
+      <span>Experiencias digitales y arte interactivo</span>
+    </h1>
+  </div>
+
+  <!-- HERO DESKTOP -->
+  <div id="p5-hero"></div>
+
+</section>
     <!-- SOBRE MI -->
     <section class="about reveal" id="about">
 <div class="about-media">
@@ -479,14 +490,12 @@ Cotizar este servicio
 
     <div class="modal-media">
       <div class="modal-video">
-  <video
-    src="video/Video Project 4.mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-  ></video>
+ <video
+  src="video/Video Project 4.mp4"
+  muted
+  playsinline
+  preload="none"
+></video>
 </div>
 
 
@@ -498,9 +507,19 @@ Cotizar este servicio
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-<script src="hero-p5.js"></script>
+<script>
+if(window.innerWidth > 768){
+
+  const p5script = document.createElement("script")
+  p5script.src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"
+  document.body.appendChild(p5script)
+
+  const heroScript=document.createElement("script")
+  heroScript.src="hero-p5.js"
+  document.body.appendChild(heroScript)
+
+}
+</script>
 </body>
 
-</body>
 </html>
